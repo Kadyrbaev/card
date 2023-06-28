@@ -1,23 +1,18 @@
-import logo from './logo.svg';
+import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
+import { testSlice } from './store';
 
 function App() {
+  const res =   useSelector((state)=> state.test )
+  const dispatch = useDispatch()
+  console.log(res);
+
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>{res.text}</h1>
+      <button onClick={()=>{dispatch(testSlice.actions.plusNum(60))}}>TEST</button>
+     <button onClick={()=>{dispatch({type: "PLUS", payload: 5})}}>+</button>
     </div>
   );
 }
