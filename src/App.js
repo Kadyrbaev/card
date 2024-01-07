@@ -15,6 +15,7 @@ function App() {
      <button onClick={()=>{dispatch({type: "PLUS", payload: 5})}}>+</button>
      <input type="text" />
      <input type="text" />
+     <h2>wufbowfbow</h2>
     </div>
   );
 }
